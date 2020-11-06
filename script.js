@@ -35,13 +35,13 @@
     }
     
     startButton.addEventListener('click', () => {
-    snd.play();
     startButton.getElementsByClassName.pointerEvents = 'none';
     deg = hasFallenIntoThatRange();
     wheel.style.transition = 'all 3s ease-out';
     wheel.style.transitionDuration = '3s';
     wheel.style.transform = `rotate(${deg + 360}deg)`;
     wheel.classList.add('blur');
+    if (deg > 0) snd.play();
     });
     
     wheel.addEventListener('transitionend', () => {
